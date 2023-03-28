@@ -1,8 +1,8 @@
-const CourseModel = require('../models/course');
-const StudentModel = require('../models/student');
+const CourseModel = require("../models/course");
+const StudentModel = require("../models/student");
 // const Joi = require('joi');
-const { addCourseSchema } = require('../validations/course');
-
+const { addCourseSchema } = require("../validations/course");
+// POST example.com/v1/courses (当时讲的lambda)
 const addCourse = async (req, res) => {
   // const { code, description, name } = req.body;
   // validation schema
@@ -36,9 +36,9 @@ const getAllCourses = async (req, res) => {
 };
 const getCourseById = async (req, res) => {
   const { id } = req.params;
-  const course = await CourseModel.findById(id).populate('students').exec();
+  const course = await CourseModel.findById(id).populate("students").exec();
   if (!course) {
-    res.status(404).json({ error: 'Course not found' });
+    res.status(404).json({ error: "Course not found" });
     return;
   }
   res.json(course);
@@ -52,7 +52,7 @@ const updateCourseById = async (req, res) => {
     { new: true }
   ).exec();
   if (!course) {
-    res.status(404).json({ error: 'Course not found' });
+    res.status(404).json({ error: "Course not found" });
     return;
   }
   res.json(course);
@@ -61,7 +61,7 @@ const deleteCourseById = async (req, res) => {
   const { id } = req.params;
   const course = await CourseModel.findByIdAndDelete(id).exec();
   if (!course) {
-    res.status(404).json({ error: 'Course not found' });
+    res.status(404).json({ error: "Course not found" });
     return;
   }
   // student document : {courses: [s1,s2]}

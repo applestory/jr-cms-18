@@ -1,0 +1,34 @@
+MongoDB atlas 云端数据库
+AWS ElasticBeanstalk - 部署平台/服务 (platform - node.js)
+ -> AWS EC2 (虚拟机) ssh -> install all environments (node.js, npm packages) -> run npm start -> load balancing, log, domain
+ -> url
+
+heroku, render.io (一键部署平台)
+
+AWS codepipelines 
+
+CI/CD
+continuous integration /continuous deploy 
+lint/unit test/integration test/(maybe ui test)
+
+git branches
+feature -> local environment -> PR request \->\ (github actions 设置CI) master
+master -> development environments \->\ deploy to staging every day
+staging -> staging env \->\ deploy to production every day
+production -> production env
+
+feature
+development
+staging
+master -> production
+
+
+pm2 - process management
+scale up - create multiple servers - auto restart
+
+docker
+container
+kubernetes - google
+ECS - aws
+
+health check (机制，默认访问根目录)
